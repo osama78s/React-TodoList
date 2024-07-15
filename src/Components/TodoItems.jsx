@@ -21,17 +21,19 @@ export const TodoItems = ({ todoContainer, setTodoContainer }) => {
     }
 
     const handleUpdate = () => {
-        if (editIndex !== null) {
-            const newArr = todoContainer.map((item, index) => {
-                if (index === editIndex) {
-                    return {...item, todo_task: editText };
-                }
-                return item;
-            });
-            setTodoContainer(newArr);
-            localStorage.setItem('todos', JSON.stringify(newArr));
-            setEditIndex(null);
-            setEditText('');
+        if (editText !== ''){
+            if (editIndex !== null) {
+                const newArr = todoContainer.map((item, index) => {
+                    if (index === editIndex) {
+                        return {...item, todo_task: editText };
+                    }
+                    return item;
+                });
+                setTodoContainer(newArr);
+                localStorage.setItem('todos', JSON.stringify(newArr));
+                setEditIndex(null);
+                setEditText('');
+            }
         }
     }
 
