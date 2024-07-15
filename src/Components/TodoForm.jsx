@@ -33,42 +33,12 @@ export const TodoForm = () => {
 
 
 
-    // const [todo, setTodo] = useState({
-    //     todo_task: '',
-    // });
-
-    // const [todoContainer, setTodoContainer] = useState([]);
-
-    // // تحميل المهام من local storage عند تحميل الصفحة
-    // useEffect(() => {
-    //     const savedTodos = localStorage.getItem('todos');
-    //     if (savedTodos) {
-    //         setTodoContainer(JSON.parse(savedTodos));
-    //     }
-    // }, []);
-
-    // // حفظ المهام في local storage عند تحديث قائمة المهام
-    // useEffect(() => {
-    //     if (todoContainer.length > 0) {
-    //         localStorage.setItem('todos', JSON.stringify(todoContainer));
-    //     }
-    // }, [todoContainer]);
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     if (todo.todo_task.trim()) {  // تأكد من أن المهمة ليست فارغة
-    //         setTodoContainer([...todoContainer, todo]);
-    //         setTodo({ todo_task: '' }); // مسح حقل الإدخال
-    //     }
-    // };
-
-
     return (
         <>
             <form className='TodoForm' onSubmit={handleSubmit}>
                 <input 
                     onChange={(e) => setTodo({ todo_task: e.target.value })} 
-                    value={todo.todo_task}  // تأكد من ربط القيمة بالحالة
+                    value={todo.todo_task} 
                     type="text" 
                     className='todo-input mb-3 sm:mb-8' 
                     placeholder='What Is Task Today?' 

@@ -18,7 +18,6 @@ export const TodoItems = ({ todoContainer, setTodoContainer }) => {
 
     const handleEdit = (index) => {
         setEditIndex(index);
-        // setEditText(todoContainer[index].todo_task);
     }
 
     const handleUpdate = () => {
@@ -47,7 +46,7 @@ export const TodoItems = ({ todoContainer, setTodoContainer }) => {
                                 type="text"
                                 value={editText}
                                 onChange={(e) => setEditText(e.target.value)}
-                                className="border rounded p-1 outline-none update"
+                                className="flex-1 border rounded p-1 outline-none update"
                             />
                             <button onClick={handleUpdate} className="adds text-white p-1 rounded">Update</button>
                         </div>
