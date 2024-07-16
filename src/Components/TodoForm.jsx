@@ -4,7 +4,8 @@ import { TodoItems } from './TodoItems';
 export const TodoForm = () => {
 
     const [todo, setTodo] = useState({
-        todo_task: ''
+        todo_task: '',
+        completed: false
     })
 
     const [todoContainer, setTodoContainer] = useState([]);
@@ -20,8 +21,8 @@ export const TodoForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (todo.todo_task.trim()){
-            setTodoContainer([...todoContainer ,todo]);
-            setTodo({todo_task: ''});
+            setTodoContainer([...todoContainer ,{ ...todo, completed: false }]);
+            setTodo({todo_task: '', completed: false});
         }
     }
 
@@ -32,7 +33,6 @@ export const TodoForm = () => {
     }, [todoContainer])
 
 
-
     return (
         <>
             <form className='TodoForm' onSubmit={handleSubmit}>
@@ -40,12 +40,12 @@ export const TodoForm = () => {
                     onChange={(e) => setTodo({ todo_task: e.target.value })} 
                     value={todo.todo_task} 
                     type="text" 
-                    className='todo-input mb-3 sm:mb-8' 
+                    className='todo-input mb-3 sm:mb-8 capitalize' 
                     placeholder='What Is Task Today?' 
                 />
                 <button type='submit' className='todo-btn block mx-auto mb-10 sm:mx-0 sm:mb-0 sm:inline-block'>Add Task</button>
             </form>
-            <TodoItems todoContainer={todoContainer} setTodoContainer={setTodoContainer}/>
+            <TodoItems todo={todo} todoContainer={todoContainer} setTodoContainer={setTodoContainer}/>
         </>
     );
 };

@@ -64,6 +64,14 @@ h1 {
 .update{
   color: #1A1A40;
 }
+.des{
+  font-size: 17px;
+  letter-spacing: 0.4px;
+}
+.up{
+  text-decoration: line-through;
+  color: #1A1A40;
+}
 .adds{
   background-color: #1A1A40;
 }
