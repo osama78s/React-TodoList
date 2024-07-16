@@ -63,9 +63,9 @@ export const TodoItems = ({ todo, todoContainer, setTodoContainer }) => {
                     ) : (
                         <>
                             <p className={`${todo.completed ? 'up' : 'text-white'} capitalize des cursor-pointer`} onClick={() => handelCompleted(index)}>{todo.todo_task}</p>
-                            <div className='flex gap-1'>
+                            <div className='felx gap-1'>
                                 <FontAwesomeIcon
-                                    className='cursor-pointer'
+                                    className={`${todo.completed ? 'hidden' : 'inline-block'} cursor-pointer`}
                                     icon={faPenToSquare}
                                     onClick={() => handleEdit(index)}
                                 />
